@@ -1,7 +1,7 @@
 import React from 'react';
-import style from '../../../styles.module.css';
+
 const NumberButton = ({ data }) => {
-	return <button className={style.button}>{data}</button>;
+	return <button className={data === '0' && 'zero-button'}>{data}</button>;
 };
 
 export default NumberButton;

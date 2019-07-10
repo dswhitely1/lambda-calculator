@@ -1,0 +1,16 @@
+.display-container {
+	height: 100px;
+	width: 100%;
+	background-color: #222222;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: 50px;
+	margin: auto;
+
+	span {
+		font-size: 40px;
+		padding-right: 20px;
+		color: white;
+	}
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import style from '../../styles.module.css';
+import './display.scss';
 
 const Display = () => {
 	return (
-		<div className={style.display}>
-			<span className={style.span}>{0}</span>
+		<div className='display-container'>
+			<span>{0}</span>
 		</div>
 	);
 };
