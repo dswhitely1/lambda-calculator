@@ -12,7 +12,6 @@ import './app.scss';
 
 function App() {
 	const [ appState, setAppState ] = useState({
-		total      : 0,
 		display    : '0',
 		value      : [],
 		operations : [],
@@ -59,8 +58,8 @@ function App() {
 						).toString();
 						finalArray.splice(index - 1, 3, result);
 					}
-					while (finalArray.includes('*')) {
-						index = finalArray.indexOf('*');
+					while (finalArray.includes('/')) {
+						index = finalArray.indexOf('/');
 						result = operations(
 							Number(finalArray[index - 1]),
 							finalArray[index],
@@ -90,7 +89,7 @@ function App() {
 					}
 				}
 			}
-			setAppState({ ...appState, display: finalArray.join('') });
+			setAppState({ ...appState, display: finalArray.join(''), value: [], operations: [] });
 		} else {
 			setAppState({ ...appState, value: [ ...appState.value, data ], display: `${appState.value.join('')}${data}` });
 		}
