@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //import any components needed
 import OperatorButton from './OperatorButton';
@@ -6,10 +6,11 @@ import OperatorButton from './OperatorButton';
 import { operators } from '../../../data';
 import style from '../../../styles.module.css';
 const Operators = () => {
+	const [ operatorButtons, setOperatorButtons ] = useState(operators);
 	// STEP 2 - add the imported data to state
 	return (
 		<span className={style.operatorContainer}>
-			{operators.map((operator, i) => <OperatorButton key={i} data={operator} />)}
+			{operatorButtons.map((operator, i) => <OperatorButton key={i} data={operator} />)}
 		</span>
 	);
 };
