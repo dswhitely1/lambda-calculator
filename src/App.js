@@ -35,7 +35,6 @@ function App() {
 	};
 
 	const updateValue = data => {
-		console.log(data);
 		if (data === '+' || data === '-' || data === '*' || data === '/') {
 			setAppState({
 				...appState,
@@ -89,11 +88,15 @@ function App() {
 					}
 				}
 			}
-			setAppState({ ...appState, display: finalArray.join(''), value: [], operations: [] });
+			const finalResult = finalArray[0] === '' ? '0' : finalArray.join('');
+			setAppState({ ...appState, display: finalResult, value: [], operations: [] });
+		} else if (data === 'C') {
+			setAppState({ ...appState, display: '0', value: [], operations: [] });
+		} else if (data === 'x/-' || data === '%') {
+			return;
 		} else {
 			setAppState({ ...appState, value: [ ...appState.value, data ], display: `${appState.value.join('')}${data}` });
 		}
-		console.log(appState);
 	};
 
 	return (
@@ -102,7 +105,7 @@ function App() {
 			<Display total={appState.display} />
 			<div className='button-container'>
 				<div className='calc'>
-					<Specials />
+					<Specials handleClick={updateValue} />
 					<Numbers handleClick={updateValue} />
 				</div>
 				<div className='oper'>

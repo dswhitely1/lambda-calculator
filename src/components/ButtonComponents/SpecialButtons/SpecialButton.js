@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SpecialButton = ({ data }) => {
-	return <button>{data}</button>;
+const SpecialButton = ({ data, handleClick }) => {
+	return <button onClick={() => handleClick(data)}>{data}</button>;
 };
 
 export default SpecialButton;
