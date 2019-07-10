@@ -2,10 +2,10 @@ import React from 'react';
 
 import './display.scss';
 
-const Display = () => {
+const Display = ({ total }) => {
 	return (
 		<div className='display-container'>
-			<span>{0}</span>
+			<span>{total}</span>
 		</div>
 	);
 };
